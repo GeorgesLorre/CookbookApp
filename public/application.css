@@ -1,0 +1,52 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-sizy: 16px;
+  font-family: "Lato", sans-serif;
+  line-height: 1.8em;
+  font-weight: 400;
+  color: #666;
+}
+
+.maintitle {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 30px;
+  text-align: center;
+  letter-spacing: 8px;
+  margin: 50px;
+}
+
+.maintitle .border {
+  background-color: #111;
+  color: #fff;
+  padding: 20px;
+  outline: dotted white;
+}
+
+ul li{
+    list-style: none;
+    background: #f4f4f4;
+    margin: 2px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.deleteMe{
+    float: right;
+}
+
+.SelectMe{
+    float: right;
+}
+
+.button {
+    background-color: black; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+

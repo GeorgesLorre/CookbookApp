@@ -1,0 +1,21 @@
+# You should always start with your model.
+# The most important thing in your app is your data, and using models allows you
+# to manipulate whatever data you have.
+# So, create a new file `recipe.rb` to define a `Recipe` class.
+# It should have two instance variables, `@name` and `@description`.
+#
+################### MODEL ################################################
+
+class Recipe
+  attr_reader :name, :description, :duration, :tried
+  def initialize(name, description, duration = 0, tried = 0)
+    @name = name
+    @description = description
+    @duration = duration
+    @tried = tried
+  end
+
+  def hastried!
+    @tried = 1
+  end
+end

@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="maintitle">
+    <div class="ptext">
+      <span class="border">
+        Cookbook
+      </span>
+    </div>
+  </div>
+</div>
+
+
+
+<ul>
+  <a href="/addcustom" class="button">Add your own recipe</a>
+  <a href="/lookup" class="button">search online</a>
+</ul>
+
+<div class="recipelist">
+  <p>
+    <% @recipearray.each_with_index do |line, i| %>
+      <ul>
+        <li>
+          <p>
+            <div class='deleteMe' data-target="<%= i %>">X</div>
+            <b><%= "#{i + 1}: #{line.name}" %></b>
+            <br>
+            <%="#{line.description}" %>
+
+          </p>
+        </li>
+      </ul>
+    <% end %>
+    <%= "size of cookbook : #{@recipearray.size}" %>
+  </p>
+</div>
+
+
+
+

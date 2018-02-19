@@ -1,0 +1,42 @@
+<form action="/lookup" method="post" tag="enter keyword">
+    <input type="text" name="key">
+</form>
+
+<br>
+<br>
+
+
+
+<!-- <form action="/tester" method="post">
+  <input type="checkbox" name="post[bike]"> I have a bike<br>
+  <input type="checkbox" name="post[car]"> I have a car<br>
+  <input type="submit">
+</form> -->
+ <br>
+ <br>
+ <br>
+
+<p>
+  <% if @holder != nil %>
+    <h1>Make your selection</h1>
+    <form action="/tester" method="post">
+    <input type="submit" value="Submit">
+    <% @holder.each_with_index do |line, i| %>
+      <ul>
+        <li>
+          <p>
+            <input type="checkbox" name="p[]" value="<%=line.to_s%>">
+            <b><%= "#{i + 1}: #{line[:name]}" %></b>
+            <br>
+            <%="#{line[:description]}"%>
+          </p>
+        </li>
+      </ul>
+    <% end %>
+    <input type="submit" value="Submit">
+    </form>
+    <%= "size of list : #{@holder.size}" %>
+  <% end %>
+</p>
+
+
