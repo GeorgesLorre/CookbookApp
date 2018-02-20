@@ -15,9 +15,9 @@ class ScrapeService
 
   def initialize(searchkey)
 
-    # @url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=#{searchkey}"
+     @url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=#{searchkey}"
     #
-    @url = "banane.html"
+    #@url = "banane.html"
     @doc = Nokogiri::HTML(File.open(@url))
   end
 

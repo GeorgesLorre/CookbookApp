@@ -1,1 +1,0 @@
-aufbidjs.accounts.auf_appnexus_old.callbacks.callback_auf_appnexus_old_n0_f3243_p12331756_s1000x90_728x90({"result":{"cpm":0.0,"ad":""}});
