@@ -13,8 +13,9 @@ require_relative 'recipe'
 class ScrapeService
 
   def initialize(searchkey)
-    @url = "http://www.marmiton.org/recettes/recherche.aspx?aqt=#{searchkey}"
-    @doc = Nokogiri::HTML(open(@url).read)
+     @url = "http://www.marmiton.org/recettes/recherche.aspx?aqt=#{searchkey}"
+      @doc = Nokogiri::HTML(open(@url).read)
+
   end
 
   def scrapedobject

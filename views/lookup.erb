@@ -25,8 +25,10 @@
       <ul>
         <li>
           <p>
-            <input type="checkbox" name="p[]" value="<%=line.to_s%>">
-            <b><%= "#{i + 1}: #{line[:name]}" %></b>
+            <input class="checkbox" type="checkbox" name="p[][on]" onClick="checkBoxClick(this, '<%= line[:name]%>' , '<%= line[:description]%> ','<%= line[:duration]%>')"   >
+
+
+          <b><%= "#{i + 1}: #{line[:name]}" %></b>
             <br>
             <%="#{line[:description]}"%>
           </p>
@@ -39,4 +41,14 @@
   <% end %>
 </p>
 
+<script type="text/javascript">
+ function checkBoxClick(element, name, description,duration) {
+      let HTMLtoAdd = '<input type=\"text\" hidden name=\"p[][name]\" value=\" ' + name  + ' \" >   <input type=\"text\" hidden name=\"p[][description]\" value=\" ' + description + ' \" > <input type=\"text\" hidden name=\"p[][duration]\"  value=\" ' + duration +  ' \" >' ;
+       let divToHTML = document.createElement('div');
+       divToHTML.innerHTML = HTMLtoAdd;
+       element.parentElement.appendChild(divToHTML);
+  };
 
+
+
+</script>

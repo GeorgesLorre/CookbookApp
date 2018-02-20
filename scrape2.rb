@@ -14,7 +14,7 @@ class ScrapeService
   attr_reader :doc
   def initialize(searchkey)
     @url = "http://www.aufeminin.com/recettes/recherche.aspx?type=all&aqt=#{searchkey}"
-    @doc = Nokogiri::HTML(open(@url, 'User-Agent' => '').read)
+    @doc = Nokogiri::HTML(open(@url, :read_timeout => 10).read)
   end
 
 
@@ -31,7 +31,6 @@ class ScrapeService
 end
 
 # p ScrapeService.new("chocolate").scrapedobject
-p ScrapeService.new("chocolate").doc
 
 
 
