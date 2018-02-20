@@ -43,13 +43,19 @@ get '/lookup' do
 end
 
 post "/lookup" do
-  @holder = ScrapeService.new(params[:key]).scrapedobject
+  p params
+  p @holder = ScrapeService.new(params[:key]).scrapedobject
+
   erb :lookup
 end
 
 post '/tester' do
-  p params
-  p request
+  # p params
   @test = params
+ @test["p"].each do |hash|
+    if hash['on']
+      cookbook.add_recipe(Recipe.new(hash))
+    end
+  end
   erb :tester
 end

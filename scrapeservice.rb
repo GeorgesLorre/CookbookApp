@@ -9,12 +9,16 @@
 require 'nokogiri'
 require 'open-uri'
 require_relative 'recipe'
+require 'json'
 
 class ScrapeService
 
   def initialize(searchkey)
-    @url = "http://www.marmiton.org/recettes/recherche.aspx?aqt=#{searchkey}"
-    @doc = Nokogiri::HTML(open(@url).read)
+
+    # @url = "https://www.marmiton.org/recettes/recherche.aspx?aqt=#{searchkey}"
+    #
+    @url = "banane.html"
+    @doc = Nokogiri::HTML(File.open(@url))
   end
 
   def scrapedobject
@@ -25,6 +29,7 @@ class ScrapeService
       duration =  card.search('.recipe-card__duration__value').text
       holder << {name: title, description: descr, duration: duration}
     end
+    p holder
     return holder
   end
 end
