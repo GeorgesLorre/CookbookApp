@@ -1,5 +1,6 @@
 <form action="/lookup" method="post" tag="enter keyword">
     <input type="text" name="key">
+    <input type="submit" value="Submit">
 </form>
 
 <br>
@@ -25,7 +26,7 @@
       <ul>
         <li>
           <p>
-            <input type="checkbox" name="p[]" value="<%=line.to_s%>">
+            <input class="checkbox" type="checkbox" name="p[]" value="<%=line.to_s%>">
             <b><%= "#{i + 1}: #{line[:name]}" %></b>
             <br>
             <%="#{line[:description]}"%>
@@ -38,5 +39,3 @@
     <%= "size of list : #{@holder.size}" %>
   <% end %>
 </p>
-
-
