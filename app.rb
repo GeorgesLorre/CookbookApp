@@ -52,6 +52,7 @@ end
 post '/tester' do
   # p params
   @test = params
+  p @test
  @test["p"].each do |hash|
     if hash['on']
       cookbook.add_recipe(Recipe.new(hash))
